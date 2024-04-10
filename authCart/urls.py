@@ -1,8 +1,11 @@
+from django.core.mail import EmailMessage
 from django.urls import path
 from authCart import views
 
 urlpatterns = [
    path("signup/", views.signUp , name="signUp"),
-   path("login/", views.login , name="login"),
-   path("logout/", views.logout , name="logout"),
+   path("login/", views.handle_login , name="handle_login"),
+   path("logout/", views.handle_logout , name="handle_logout"),
+   # path('activate/<uidb64>/<token>',views.ActivateAccountView.as_view(),name='activate'),
+   
 ]
